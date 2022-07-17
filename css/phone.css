@@ -1,0 +1,98 @@
+
+.menu > a{
+    padding-left: 2%;
+    width: 50%;
+    text-decoration: none;
+    font-size: 60px;
+    color: #C08EF5;
+}
+.menu > a > span{
+    color: #FFFFFF;
+}
+.showMenu{
+    width: 10%; 
+    margin-right: 5%;
+    padding-top: 5px;
+}
+.showMenu > a{
+    text-decoration: none;
+    font-size: 60px;
+    color: #C08EF5;
+}
+.img{
+    width: 100%;
+}
+.find{
+    width: 100%;
+}
+.containt{
+    display: block;
+    background: #C08EF5;
+    height: fit-content;
+}
+.containt > div > div > p{
+    width: 100%;
+    text-align: left;
+    font-size: 25px;
+    padding: 30px;
+    color: #3d3d3d;
+}
+.findChild{
+    height: fit-content;
+    margin: auto;
+}
+.containt > div > div > .btnFind{
+    background: linear-gradient(#ffd268, #e8a710);
+    margin: 0px auto auto auto !important;
+}
+.containt > div > div > .btnFind:hover{
+    background: linear-gradient(#9d72cc, #7753ba);
+}
+.title{
+    width: 90%;
+    color: #C08EF5;
+    margin: 30px auto 10px auto;
+    font-size: 40px;
+}
+
+.inInfo{
+    font-size: 25px;
+    color: #3d3d3d;
+}
+.inputInfo table{
+    width: 90%;
+}
+.inputInfo table .inInfo{
+    width: 35%;
+    font-size: 20px;
+}
+.inputInfo table input{
+    font-size: 20px;
+}
+.result > .infoResult > .name{
+    font-size: 18px;
+}
+.result > .infoResult > .address{
+    font-size: 12px;
+}
+.result > .infoResult > .address{
+    font-size: 12px;
+}
+.result > .infoResult > .status{
+    font-size: 12px;
+}
+.btnBook{
+    font-size: 15px;
+}
+.result{
+    width: 90%;
+    padding: 15px;
+}
+footer > div{
+    flex-direction: column;
+}
+div#contactframe{
+    border-right: none;
+    width: 100%;
+    padding: 3%;
+}

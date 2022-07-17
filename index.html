@@ -1,0 +1,161 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>HEHE</title>
+        <script src = "index.js"></script>
+        <meta charset="utf-8">
+        <meta name="author" content="Võ Phú Phát, Nguyễn Kim Bảo Ngân, Phan Thanh Hải">
+        <meta name="keywords" content="Vaccine,Vắc xin,Tìm vaccxin, VaccineFinder">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/indexStyles.css" rel="stylesheet">
+        <link href="css/phone.css" rel="stylesheet" media="screen and (max-width: 590px)">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body onload = "init()">
+        <header>
+            <div class="menu">
+                <a href="index.html">Lo<span>Care</span></a>
+                <div class="showMenu">
+                    <a href="javascript:;"><i class="fas fa-bars"></i></a>
+                </div>
+            </div>
+            <div class ="containt">
+                <div class="img">
+                    <img src="image/cover.jpg"/>
+                </div>
+                <div class="find">
+                    <div class="findChild">
+                        <p>Tìm ngay địa điểm tiêm chủng vaccine gần bạn</p>
+                        <div onclick = "display()" class="btn btnFind">Tìm ngay</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section>
+            <div id="inputAddress">
+                <div class="title">Nhập nơi ở của bạn</div>
+                <div class="inputInfo">
+                    <form>
+                        <table>
+                            <tr>
+                                <td class="inInfo">Tỉnh/Thành phố:</td>
+                                <td>
+                                    <input type="text" id="ttp" placeholder="Nhập tỉnh/thành phố bạn sinh sống..." />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="inInfo">Quận/Huyện:</td>
+                                <td>
+                                    <input type="text" id="qh" placeholder="Nhập quận/huyện bạn sinh sống..." />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="inInfo">Phường/Xã:</td>
+                                <td>
+                                    <input type="text" id="px" placeholder="Nhập phường/xã bạn sinh sống..." />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="inInfo">Địa chỉ chi tiết:</td>
+                                <td>
+                                    <input type="text" id="dcct" placeholder="Nhập số nhà, tên đường bạn sinh sống..." />
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                    <div onclick = "confirm()" class="btn">Xác nhận</div>
+                </div>
+            </div>
+            <div id="outputResult">
+                <div class="title">Kết quả</div>
+                <div class="results">
+                    <div class="result">
+                        <div class ="infoResult">
+                            <div class="name">Trạm Y Tế Phường 7 Quận Gò Vấp</div>
+                            <div class="address">79 Nguyễn Văn Nghi, phường 7, Gò Vấp, TP.HCM</div>
+                            <div class ="status">
+                                <span class="allow">Vắng người</span> <span class="amount">Vaccine Astra</span>
+                            </div>
+                            
+                        </div>
+                        <div onclick = "displayBook()" class="btn btnBook">
+                            Đặt lịch tiêm
+                        </div>
+                    </div>
+                    <div class="result">
+                        <div class ="infoResult">
+                            <div class="name">Trạm Y Tế Phường 11 Quận Gò Vấp</div>
+                            <div class="address">637 Quang Trung, phường 11, Gò Vấp, TP.HCM</div>
+                            <div class ="status">
+                                <span class="allow">Đông người</span> <span class="amount">Vaccine Pfizer</span>
+                            </div>
+                        </div>
+                        <div onclick = "displayBook()" class="btn btnBook">
+                            Đặt lịch tiêm
+                        </div>
+                    </div>
+                    <div class="result">
+                        <div class ="infoResult">
+                            <div class="name">Trạm Y Tế Phường 17 Quận Gò Vấp</div>
+                            <div class="address">37 Nguyễn Văn Lượng, phường 17, Gò Vấp, TP.HCM</div>
+                            <div class ="status">
+                                <span class="disallow">Hết thuốc</span> <span class="amount">Vaccine VeroCell</span>
+                            </div>
+                        </div>
+                        <div onclick = "displayBook()" class="btn btnBook">
+                            Đặt lịch tiêm
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section >
+            <div id="book">
+                <div class="title">Nhập thông tin cá nhân của bạn</div>
+                <div class="inputInfo">
+                    <form>
+                        <table>
+                            <tr>
+                                <td class="inInfo">Họ tên:</td>
+                                <td>
+                                    <input type="text" id="ht" placeholder="Nhập họ tên của bạn..." />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="inInfo">SĐT:</td>
+                                <td>
+                                    <input type="text" id="sdt" placeholder="Nhập số điện thoại của bạn..." />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="inInfo">CMND/CCCD:</td>
+                                <td>
+                                    <input type="text" id="cmnd" placeholder="Nhập số CMND/CCCD của bạn..." />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="inInfo">Ngày giờ tiêm:</td>
+                                <td>
+                                    <input type="datetime-local" id="d" />
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                    <div class="btn">Xác nhận</div>
+                </div>
+            </div>
+            
+        </section>
+        <footer>
+            <div>
+                <div id="contactframe">
+                    <h2>Liên hệ với chúng tôi:</h2>
+                    <h3><b><i class="fas fa-phone"></i> : 0909052307</b></h3>
+                    <h3><b><a href="https://www.google.com/maps/place/371+Nguy%E1%BB%85n+Ki%E1%BB%87m,+Ph%C6%B0%E1%BB%9Dng+3,+G%C3%B2+V%E1%BA%A5p,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh" target="blank"><i class="fas fa-map-marker-alt"></i> : 371 Nguyễn Kiệm, P.3, Q.Gò Vấp,
+                                TP.HCM</a></b></h3>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
